@@ -1,7 +1,8 @@
+
 {
   "expo": {
-    "name": "Natively",
-    "slug": "Natively",
+    "name": "ProxiTalk",
+    "slug": "ProxiTalk",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/natively-dark.png",
@@ -10,22 +11,33 @@
     "splash": {
       "image": "./assets/images/natively-dark.png",
       "resizeMode": "contain",
-      "backgroundColor": "#000000"
+      "backgroundColor": "#007AFF"
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.Natively",
+      "bundleIdentifier": "com.anonymous.ProxiTalk",
       "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSLocationWhenInUseUsageDescription": "ProxiTalk needs your location to find and connect with nearby users within 8 meters for voice communication.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "ProxiTalk needs your location to find and connect with nearby users within 8 meters for voice communication, even when the app is in the background.",
+        "NSMicrophoneUsageDescription": "ProxiTalk needs access to your microphone to enable voice communication with nearby users.",
+        "UIBackgroundModes": ["location", "audio"]
       }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/natively-dark.png",
-        "backgroundColor": "#000000"
+        "backgroundColor": "#007AFF"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.anonymous.Natively"
+      "package": "com.anonymous.ProxiTalk",
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "RECORD_AUDIO",
+        "FOREGROUND_SERVICE",
+        "FOREGROUND_SERVICE_LOCATION"
+      ]
     },
     "web": {
       "favicon": "./assets/images/final_quest_240x240.png",
@@ -34,9 +46,15 @@
     "plugins": [
       "expo-font",
       "expo-router",
-      "expo-web-browser"
+      "expo-web-browser",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "ProxiTalk needs your location to find and connect with nearby users within 8 meters for voice communication."
+        }
+      ]
     ],
-    "scheme": "natively",
+    "scheme": "proxitalk",
     "experiments": {
       "typedRoutes": true
     },
